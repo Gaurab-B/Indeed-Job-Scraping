@@ -35,7 +35,7 @@ for jobs in everything:
             job_name = job_name_span.get('title', job_name_span.text)
             job_titles.append(job_name)  #append the title
             
-    div_elements = jobs.find_all('div', class_='company_location css-17fky0v e37uo190') #get company and location details
+    div_elements = jobs.select('div.company_location') #get company and location details
     for div in div_elements:
         company_div = div.find('span', {'data-testid': 'company-name'}) #company
         location_div = div.find('div', {'data-testid': 'text-location'}) #location
