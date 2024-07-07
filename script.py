@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from bs4 import BeautifulSoup
 
-file_number = input("Enter the Page Number that You scraped")
+file_number = input("Enter the Page Number that You scraped: ")
 def removal(path):   #to remove any ' from the string so that it doesnot stop
     with open(path, 'r') as file:
         content = file.read()
@@ -124,5 +124,5 @@ df = pd.DataFrame({
 })
 
 print(df)
-output_text = "AI-Cincinati-Page(" + file_number +").csv"
+output_text = "datasets\AI-Cincinati-Page(" + file_number +").csv"
 df.to_csv(output_text)
