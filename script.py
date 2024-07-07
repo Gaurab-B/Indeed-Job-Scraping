@@ -83,13 +83,6 @@ for link in everything:
             job_link = a_tag.get('href', '')
             all_links.append(job_link)
 
-base_url = "https://www.indeed.com"
-links = all_links  # assuming all_links is your list of job links
-indeed_urls = []
-
-for link in links:
-    indeed_urls.append(base_url + link)
-indeed_urls = indeed_urls[:len(location)]
 
 df = pd.DataFrame({
     'Job Title': job_titles,
@@ -98,7 +91,7 @@ df = pd.DataFrame({
     'Salary($)': salary,
     'Job-Type' : job_types,
     'Job-Description': all_descriptions,
-    'Link': indeed_urls
+    'Raw_Link': all_links
 })
 
 print(df)
