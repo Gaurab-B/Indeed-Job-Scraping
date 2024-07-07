@@ -2,7 +2,7 @@
 
 The notebooks are to understand how the code works.    
 
-Firstly, Go to indeed and search a job and location and find the 'div' with the class ='job_seen_beacon'.    
+Firstly, Go to indeed and search a job and location and find the 'div' with the class ='mosaic-jobResults'    
 
 Copy that element and put it to temp.txt.    
 
