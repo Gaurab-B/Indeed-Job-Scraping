@@ -26,7 +26,9 @@ location = []
 salary = []
 job_types = []
 for jobs in everything:
-    h2_elements = jobs.find_all('h2', class_='jobTitle css-198pbd eu4oa1w0') #get the title
+    h2_elements1 = jobs.find_all('h2', class_='jobTitle css-198pbd eu4oa1w0') #get the title
+    h2_elements2 = jobs.find_all('h2', class_='jobTitle jobTitle-newJob css-198pbd eu4oa1w0')
+    h2_elements = h2_elements1 + h2_elements2
     for h2 in h2_elements:
         job_name_span = h2.find('span', id=lambda x: x and x.startswith('jobTitle-'))
         if job_name_span:
@@ -69,7 +71,9 @@ for description in everything:
             all_dates.append(date_text)
 all_links = []
 for link in everything:
-    h2_elements = link.find_all('h2', class_='jobTitle css-198pbd eu4oa1w0')
+    h2_elements1 = jobs.find_all('h2', class_='jobTitle css-198pbd eu4oa1w0') #get the title
+    h2_elements2 = jobs.find_all('h2', class_='jobTitle jobTitle-newJob css-198pbd eu4oa1w0')
+    h2_elements = h2_elements1 + h2_elements2
     # Loop through each h2 element
     for h2 in h2_elements:
         # Find the anchor tag (a) within the h2 element
@@ -79,40 +83,13 @@ for link in everything:
             job_link = a_tag.get('href', '')
             all_links.append(job_link)
 
-base_url = "https://www.indeed.com/viewjob"
-links = all_links
+base_url = "https://www.indeed.com"
+links = all_links  # assuming all_links is your list of job links
 indeed_urls = []
+
 for link in links:
-    params = {}
-    for param in link.split('?')[1].split('&'):
-        key, value = param.split('=')
-        params[key] = value
-    
-    # Extracting required parameters
-    jk = params['jk']
-    cmp = params.get('cmp', '')
-    ti = params.get('ti', '')
-    xpse = params.get('xpse', '')
-    xfps = params.get('xfps', '')
-    xkcb = params.get('xkcb', '')
-    vjs = params.get('vjs', '')
-
-    # Constructing Indeed view job URL
-    indeed_url = f"{base_url}?jk={jk}"
-    if cmp:
-        indeed_url += f"&cmp={cmp}"
-    if ti:
-        indeed_url += f"&t={ti}"
-    if xpse:
-        indeed_url += f"&xpse={xpse}"
-    if xfps:
-        indeed_url += f"&xfps={xfps}"
-    if xkcb:
-        indeed_url += f"&xkcb={xkcb}"
-    if vjs:
-        indeed_url += f"&vjs={vjs}"
-
-    indeed_urls.append(indeed_url)
+    indeed_urls.append(base_url + link)
+indeed_urls = indeed_urls[:len(location)]
 
 df = pd.DataFrame({
     'Job Title': job_titles,
