@@ -69,10 +69,11 @@ for description in everything:
         # Extract and append the date text to the list
             date_text = date_element.text.strip()
             all_dates.append(date_text)
+            
 all_links = []
 for link in everything:
-    h2_elements1 = jobs.find_all('h2', class_='jobTitle css-198pbd eu4oa1w0') #get the title
-    h2_elements2 = jobs.find_all('h2', class_='jobTitle jobTitle-newJob css-198pbd eu4oa1w0')
+    h2_elements1 = link.find_all('h2', class_='jobTitle css-198pbd eu4oa1w0') #get the title
+    h2_elements2 = link.find_all('h2', class_='jobTitle jobTitle-newJob css-198pbd eu4oa1w0')
     h2_elements = h2_elements1 + h2_elements2
     # Loop through each h2 element
     for h2 in h2_elements:
