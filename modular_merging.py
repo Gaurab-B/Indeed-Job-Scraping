@@ -18,8 +18,8 @@ def output_pathh(csv_files):
     first_file_name = os.path.basename(csv_files[0])
     parts = first_file_name.split('-')
     if len(parts) >= 3:
-        role = parts[1]
-        location = parts[2].split('Page')[0].rstrip('-')
+        role = parts[0]
+        location = parts[1].split('Page')[0].rstrip('-')
 
         # Construct the output path
         output_path = f'combined_{role}_{location}_data.csv'
@@ -48,3 +48,5 @@ def main():
     else:
         print("No_csv_file_found")
     
+if __name__ == "__main__":
+    main()
