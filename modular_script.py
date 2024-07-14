@@ -70,7 +70,7 @@ def parse_job_details(soup):
 
 # Function to save DataFrame to CSV
 def save_to_csv(dataframe, location, file_number):
-    output_text = f"datasets/AI-{location}-Page({file_number}).csv"
+    output_text = f"onepage-csvfiles/AI-{location}-Page({file_number}).csv"
     dataframe.to_csv(output_text, index=False)
 
 # Main function to run the script
