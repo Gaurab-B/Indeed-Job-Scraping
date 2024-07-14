@@ -47,29 +47,25 @@ def move_old_files(directory_path, old_files_folder):
             print(f"Moved file: {file_name} to {old_files_folder}")
 
 def main():
-    directory_path = os.path.join(os.getcwd(), "onepage-csvfiles")
-    datasets_folder = os.path.join(os.getcwd(), "datasets")
-    old_files_folder = os.path.join(directory_path, "old_files")
-
+    directory_path =  os.getcwd() + "\onepage-csvfiles"
     csv_files = getfiles(directory_path)
-
+    old_files_folder = directory_path +  "\old_files"
     if csv_files:
-        output_filename = output_pathh(csv_files)
-        output_path = os.path.join(datasets_folder, output_filename)
-        
-        if not os.path.exists(datasets_folder):
-            os.makedirs(datasets_folder)
-
-        # Check if the output file already exists
-        if os.path.exists(output_path):
-            # Move old files to the old_files folder
-            move_old_files(directory_path, old_files_folder)
-
+        output_path = output_pathh(csv_files)
         df = combine(csv_files)
+        output_path = os.getcwd() + "\datasets"+"\\"+ output_path
         df.to_csv(output_path, index=False)
         print(f"Combined data saved to: {output_path}")
     else:
-        print("No CSV files found.")
-    
+        print("No_csv_file_found")
+    #now save those datasets to the old_files folder.
+    if os.path.exists(old_files_folder):
+        for file_name in os.listdir(directory_path):
+            file_path = os.path.join(directory_path, file_name)
+            if os.path.isfile(file_path) and file_name.endswith('.csv'):
+                shutil.move(file_path, os.path.join(old_files_folder, file_name))
+                print(f"Moved file: {file_name} to {old_files_folder}")
+
+
 if __name__ == "__main__":
     main()
