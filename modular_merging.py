@@ -3,6 +3,7 @@ from datetime import datetime
 import os
 import glob
 import shutil
+#DONOT RUN THIS CODE UNTIL YOU HAVE GOT ALL THE PAGES SCRAPED INTO THE Designated onepage-csvfiles folder. Then only execute this code.
 
 def getfiles(directory_path):
     try:
