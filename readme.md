@@ -70,7 +70,7 @@ After merging the datasets, any old datasets will be moved to the `old_files` fo
 
 ### 5. Data Analysis and Reporting
 
-- **Analyze Data**: Perform analysis on the scraped data to generate insights, such as trends in job postings or salary information.
+- **Analyze Data**: Perform analysis on the scraped data to generate insights, such as trends in job postings or salary information.(use a better model)
 - **Visualization**: Create visualizations (charts, graphs) to present the data more effectively.
 
 
