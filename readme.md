@@ -19,15 +19,13 @@ This project provides a Python script for scraping job listings from Indeed usin
 ### Step 2: Run the Script
 
 1. **Execute the Script**:
-   - Run the `modular_script.py` Python script.
+   - Run the `get-all-data.ipynb` Python script.
 
-2. **Enter Search Details**:
-   - When prompted, enter the page number, location, and job title for Indeed that you want to scrape.
 
-3. **Scrape Data**:
-   - The script will use Selenium to navigate through the pages and scrape job listings data.
+2. **Scrape Data**:
+   - The script will use Selenium(csv.ipynb) to navigate through the pages and scrape job listings data.
 
-4. **Repeat for Multiple Searches**:
+3. **No need to repeat for Multiple Searches(One click is enough)**:
    - You can run the script with different search parameters to gather data from various job listings.
 
 ### Important Note
@@ -42,11 +40,8 @@ This project provides a Python script for scraping job listings from Indeed usin
 
 The output file will be named based on the job role and location extracted from the search details. For example:
 
-- If you search for AI roles in Cincinnati, the output file might be named `combined_AI_Cincinnati_data.csv`.
+- If you search for AI roles in Cincinnati, the output file might be named `mreged_Data.csv`.
 
-### Additional Instructions
-
-After merging the datasets, any old datasets will be moved to the `old_files` folder within the `onepage-csvfiles` directory, provided there is a new file in the `datasets` folder.
 
 ## Next Steps
 
