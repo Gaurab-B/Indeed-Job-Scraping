@@ -44,7 +44,7 @@ The output file will be named based on the job role and location extracted from 
 
 
 ## Next Steps  
-(make auto applier for these job)
+High Priority: (Make Auto job applier for these listed jobs)
 
 ### 1. Improve Data Quality
 
