@@ -43,7 +43,8 @@ The output file will be named based on the job role and location extracted from 
 - If you search for AI roles in Cincinnati, the output file might be named `mreged_Data.csv`.
 
 
-## Next Steps
+## Next Steps  
+(make auto applier for these job)
 
 ### 1. Improve Data Quality
 
