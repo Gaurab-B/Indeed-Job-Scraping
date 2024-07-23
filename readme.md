@@ -1,50 +1,47 @@
-# Version 1.1: Scraping Indeed
+# Version 1.2: Scraping Indeed
 
 ## Overview
 
-This project provides a Python script for scraping job listings from Indeed. The notebooks included are designed to help you understand how the code functions.
+This project provides a Python script for scraping job listings from Indeed using Selenium. The notebooks included are designed to help you understand how the code functions.
 
 ## Instructions
 
-### Step 1: Prepare Your Data
+### Step 1: Prepare Your Environment
 
-1. **Search for Jobs**:
+1. **Install Dependencies**:
+   - Ensure you have Python installed.
+   - Install Selenium: `pip install selenium`.
+   - Download the appropriate WebDriver for your browser (e.g., ChromeDriver for Google Chrome).
+
+2. **Search for Jobs**:
    - Go to [Indeed](https://www.indeed.com) and search for jobs by specifying your desired job title and location.
-
-2. **Locate the Job Listings**:
-   - Find the `<div>` element with the class `mosaic-jobResults` in the HTML of the search results page.
-
-3. **Copy the Element**:
-   - Copy the entire contents of this `<div>` element and paste it into a file named `temp.txt`.
 
 ### Step 2: Run the Script
 
 1. **Execute the Script**:
-   - Run the `modular_script.py` Python script.
+   - Run the `get-all-data.ipynb` Python script.
 
-2. **Enter Page Details**:
-   - When prompted, enter the page number,location,and jobtitle of Indeed that you scraped.
 
-3. **Repeat for All Pages**:
-   - Repeat the above steps for each page of search results.
+2. **Scrape Data**:
+   - The script will use Selenium(csv.ipynb) to navigate through the pages and scrape job listings data.
+
+3. **No need to repeat for Multiple Searches(One click is enough)**:
+   - You can run the script with different search parameters to gather data from various job listings.
 
 ### Important Note
 
-**Ensure that you have scraped all pages before running `modular_script.py`.**
+**Ensure that you have configured Selenium and WebDriver correctly before running `modular_script.py`.**
 
 ### Output
 
-- The script will combine all data and save the results into a CSV file in the datasets folder.
+- The script will combine all scraped data and save the results into a CSV file in the `datasets` folder.
 
 ### Example of the Output File Naming
 
-The output file will be named based on the job role and location extracted from the first file in the directory. For example:
+The output file will be named based on the job role and location extracted from the search details. For example:
 
-- If the first file is named `AI-Cincinnati-Page(1).csv`, the output file will be named `combined_AI_Cincinnati_data.csv`.
+- If you search for AI roles in Cincinnati, the output file might be named `mreged_Data.csv`.
 
-### Additional Instructions
-
-After merging the datasets, any old datasets will be moved to the `old_files` folder within the `onepage-csvfiles` directory, provided there is a new file in the `datasets` folder.
 
 ## Next Steps
 
@@ -70,13 +67,10 @@ After merging the datasets, any old datasets will be moved to the `old_files` fo
 
 ### 5. Data Analysis and Reporting
 
-- **Analyze Data**: Perform analysis on the scraped data to generate insights, such as trends in job postings or salary information.(use a better model)
+- **Analyze Data**: Perform analysis on the scraped data to generate insights, such as trends in job postings or salary information.
 - **Visualization**: Create visualizations (charts, graphs) to present the data more effectively.
-
 
 ### 6. Community and Feedback
 
 - **Share with Others**: Share your project with the community for feedback and suggestions.
 - **Open Source**: Consider open-sourcing your project to contribute to the community and get more feedback.
-  
-
